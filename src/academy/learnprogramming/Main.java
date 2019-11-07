@@ -10,11 +10,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int array[] = getArray();
+        int[] array = getArray();
 
         printArray(array);
 
-        int sortedArray[] = sortIntegers(array);
+        int[] sortedArray = sortIntegers(array);
 
         printArray(sortedArray);
         printArray(array);
@@ -38,7 +38,7 @@ public class Main {
         }
 
 
-        int array[] = new int[num];
+        int[] array = new int[num];
         System.out.println("Enter " + num + " integers: ");
 
         for (int i = 0; i < num; i++) {
