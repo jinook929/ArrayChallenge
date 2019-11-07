@@ -1,9 +1,11 @@
 package academy.learnprogramming;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
+    private static Scanner scanner = new Scanner(System.in);
 
 
     public static void main(String[] args) {
@@ -15,12 +17,12 @@ public class Main {
         int sortedArray[] = sortIntegers(array);
 
         printArray(sortedArray);
+        printArray(array);
     }
 
     public static int[] getArray() {
 
         int num;
-        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter the number of integers to sort: ");
 
@@ -63,16 +65,22 @@ public class Main {
     }
 
     public static int[] sortIntegers(int[] array) {
+//        int[] sortedArray = new int[array.length];
+//        for(int i = 0; i < array.length; i++) {
+//            sortedArray[i] = array[i];
+//        }
+        int[] sortedArray = Arrays.copyOf(array, array.length);
+
         int temp;
-        for(int i = 0; i < array.length; i++) {
-            for(int j = 0; j < array.length - 1; j++) {
-                if(array[j] < array[j + 1]) {
-                    temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+        for(int i = 0; i < sortedArray.length; i++) {
+            for(int j = 0; j < sortedArray.length - 1; j++) {
+                if(sortedArray[j] < sortedArray[j + 1]) {
+                    temp = sortedArray[j];
+                    sortedArray[j] = sortedArray[j + 1];
+                    sortedArray[j + 1] = temp;
                 }
             }
         }
-        return array;
+        return sortedArray;
     }
 }
